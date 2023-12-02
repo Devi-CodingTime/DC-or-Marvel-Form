@@ -1,17 +1,25 @@
 'use client';
 import { useState, useEffect } from 'react';
-function FormB({ onSubmit, age }) {
-  console.log("onSubmit ",onSubmit);
-  const [marvelShows, setMarvelShows] = useState('');
+import Summary from './Summary';
 
-  const handleSubmit = (event) => {};
+function FormB({ onSubmit, age }) {
+  // console.log("onSubmit ",onSubmit);
+  const [marvelShows, setMarvelShows] = useState('');
+  const[formData,setFormData] = useState({});
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let updated = {...onSubmit};
+    updated.marvelShows=marvelShows;
+    setFormData(updated);
+    // console.log(dc);
+  };
 
   return (
-    <form id='marvel'>
+    Object.keys(formData).length>0?<Summary formData={formData}/>:<form id='marvel' onSubmit={handleSubmit}>
       <h2>Form B</h2>
       <label>
         Select Marvel Shows:
-        <select>
+        <select onChange={(e)=>{setMarvelShows(e.target.value)}}>
           <option value=''>--Select--</option>
           <option value='WandaVision'>WandaVision</option>
           <option value='The Falcon and the Winter Soldier'>
