@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 function FormB({ onSubmit, age }) {
+  console.log("onSubmit ",onSubmit);
   const [marvelShows, setMarvelShows] = useState('');
 
   const handleSubmit = (event) => {};
