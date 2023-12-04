@@ -15,7 +15,7 @@ function FormB({ onSubmit, age }) {
   };
 
   return (
-    Object.keys(formData).length>0?<Summary formData={formData}/>:<form id='marvel' onSubmit={handleSubmit}>
+    Object.keys(formData).length>0 && marvelShows?<Summary formData={formData}/>:<form id='marvel' onSubmit={handleSubmit}>
       <h2>Form B</h2>
       <label>
         Select Marvel Shows:

@@ -15,7 +15,7 @@ function FormA({ onSubmit, age })
   };
   return (
     
-    Object.keys(formData).length>0?<Summary formData={formData}/>:<form id='dc' onSubmit={handleSubmit}>
+    Object.keys(formData).length>0 && dc?<Summary formData={formData}/>:<form id='dc' onSubmit={handleSubmit}>
     <h2>Form A</h2>
     <label>
       Select DC Shows:

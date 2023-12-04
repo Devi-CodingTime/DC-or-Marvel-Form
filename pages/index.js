@@ -37,16 +37,16 @@ const App = () => {
           <br />
         </div>
       )}
-      {step === 2 && (
+      {step === 2 && age?(
         <div>
           <FormA age={age} onSubmit={formData}/>
         </div>
-      )}
-      {step === 3 && (
+      ):""}
+      {step === 3 && age? (
         <div>
           <FormB age={age} onSubmit={formData}/>
         </div>
-      )}
+      ):""}
       {(step === 2 || step === 3) && age ? (
         <button id='go-back' onClick={() => setStep(1)}>
           Go Back
