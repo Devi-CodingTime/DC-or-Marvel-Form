@@ -28,7 +28,7 @@ const App = () => {
           <br />
           <label>
             Select Form Type:
-            <select onChange={(e) => setStep(parseInt(e.target.value))}>
+            <select onChange={(e) => setStep(parseInt(e.target.value))} value={step}>
               <option value={1}>--Select--</option>
               <option value={2}>Form A</option>
               <option value={3}>Form B</option>

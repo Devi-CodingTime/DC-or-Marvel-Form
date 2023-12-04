@@ -19,7 +19,7 @@ function FormB({ onSubmit, age }) {
       <h2>Form B</h2>
       <label>
         Select Marvel Shows:
-        <select onChange={(e)=>{setMarvelShows(e.target.value)}}>
+        <select onChange={(e)=>{setMarvelShows(e.target.value)}} value={marvelShows}>
           <option value=''>--Select--</option>
           <option value='WandaVision'>WandaVision</option>
           <option value='The Falcon and the Winter Soldier'>
