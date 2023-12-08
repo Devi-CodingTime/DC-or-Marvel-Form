@@ -14,7 +14,15 @@ const App = () => {
       step:step
     }
     setFormData(obj);
+    // if(!age){
+    //   setStep("");
+    // }
   },[age,step]);
+
+  const handleAge =(e)=>{
+    setAge(parseInt(e.target.value));
+    setStep(1);
+  }
 
   return (
     <div>
@@ -23,11 +31,12 @@ const App = () => {
           <h1>Step 1: Select Form Type and Enter Age</h1>
           <label>
             Enter your age:
-            <input value={age} type='number' onChange={(e)=>{setAge(parseInt(e.target.value))}}/>
+            <input value={age} type='number' onChange={handleAge}/>
           </label>
           <br />
           <label>
             Select Form Type:
+            
             <select onChange={(e) => setStep(parseInt(e.target.value))} value={step}>
               <option value={1}>--Select--</option>
               <option value={2}>Form A</option>
